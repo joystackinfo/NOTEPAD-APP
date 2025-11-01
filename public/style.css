@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #cf9aff, #95c0ff);
+    color:#fff;
+    padding-top: 4%;
+    padding-left: 10%;
+}
+h1 i {
+  font-size: 70px;  
+  color: darkorchid;     
+  margin-right: 10px;   
+}
+button i {
+  margin-right: 5px;
+  font-size: 25px;
+  color: white;
+  margin-top:2px;
+  padding: 3px;
+}
+h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
