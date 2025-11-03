@@ -57,15 +57,22 @@ button i {
   margin-bottom: 15px;
 }
 .input-box{
-  position: relative;
+  position:relative;
   width: 100%;
    max-width: 500px;
-   min-height: 150px;
+   min-height: 180px;
    background: #fff;
    color:#333;
-   padding: 20px;
+   padding: 25px;
    outline: none;
    border-radius: 5px;
-
-
+   margin: 20px 0;  
+}
+.input-box i{
+  position:absolute;
+  bottom:15px;
+  right:15px;
+  font-size:22px;
+  color:red;
+  cursor:pointer;
 }
