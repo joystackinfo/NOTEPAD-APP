@@ -56,3 +56,16 @@ button i {
   font-weight: 600;
   margin-bottom: 15px;
 }
+.input-box{
+  position: relative;
+  width: 100%;
+   max-width: 500px;
+   min-height: 150px;
+   background: #fff;
+   color:#333;
+   padding: 20px;
+   outline: none;
+   border-radius: 5px;
+
+
+}
