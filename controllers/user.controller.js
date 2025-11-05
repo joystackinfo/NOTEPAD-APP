@@ -4,9 +4,30 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 
 
+//REGISTER CONTROLLER
 
+const registerUser = async (req, res) => { //create registerUser function
+  try {
+    const { username, age, password } = req.body; //get username, age and password from request body
 
+    const exist = await User.findOne({ username }); //check if user already exists
+    if (exist) {
+      return res.status(409)
+      .json({msg: "User already exists"})
+    }
+         const hashedPassword = await bcrypt.hash(password, 12);
+         const user = await User.create({
+         username,
+         age,
+         password: hashedPassword,
+       });
 
+       res.status(201).json({ msg: "User registered successfully", user });
+    
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 
 
@@ -18,7 +39,7 @@ const User = require('../models/user.model');
 const loginUser = async (req, res) => { //create loginUser function
   try {
 
-    const { username, password } = req.body;  //gets username and password for login
+    const { username, password } = req.body;  //gets username and age and password for login
 
     const user = await User.findOne({ username }); //check for user in database
     if (!user) {
@@ -57,6 +78,9 @@ const loginUser = async (req, res) => { //create loginUser function
   }
 };
 
-// export the controller functions
+
+
+
+// export the controller functionn
 module.exports = { registerUser, loginUser };
 
