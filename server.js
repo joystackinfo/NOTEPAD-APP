@@ -1,11 +1,11 @@
 const express = require('express')
 const dotenv = require("dotenv");
 const cors = require("cors"); 
+const noteRoutes = require("./routes/note.route.js");
 const mongoose = require('mongoose');
  const userRoutes = require('./routes/user.route.js');
 const app = express()
 const verifyToken = require('./middleware/authMiddleware.js');
-const productRoutes = require('./routes/product.route.js');
 require('dotenv').config();
 
 
@@ -17,9 +17,6 @@ app.use(express.urlencoded({extended:false})) // Allow express to parse urlencod
 
 
 // ROUTES
-// Routes
-const userRoutes = require("./routes/userRoutes");
-const noteRoutes = require("./routes/noteRoutes");
 
 app.use("/api/notes", noteRoutes);
 app.use("/api/users", userRoutes); //for user routes
@@ -55,7 +52,7 @@ mongoose.connect(process.env.MONGODB_URI)
   }
 )
 
-
+s
   .catch(err => {
     console.error(' Connection failed', err);
   });

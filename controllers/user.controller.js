@@ -1,4 +1,3 @@
-// Step 1: Import bcryptjs, jwt, and User model (already at top of file)
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
