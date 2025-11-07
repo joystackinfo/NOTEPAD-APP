@@ -12,6 +12,25 @@ document.addEventListener("DOMContentLoaded", () => {
     editableText.className = "note-text";
     editableText.setAttribute("contenteditable", "true"); // Make it editable
  
+       
+    //CREATE SAVE BUTTON
+      let saveBtn = document.createElement("button");
+      saveBtn.className = "save-btn";
+      saveBtn.textContent= "Save Note";
+
+      saveBtn.addEventListener("click", async () => {
+        const noteContent = editableText.textContent.trim();
+        if (!noteContent) {
+          alert("Please, write something first!");
+          return;
+        }
+        console.log("Saving note:", noteContent);
+        alert("Note saved successfully!");
+
+
+
+
+
 
     // Create trash icon
     let faTrash = document.createElement("i");
@@ -25,5 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     noteWrapper.appendChild(editableText);
     noteWrapper.appendChild(faTrash);
     notesSection.appendChild(noteWrapper);
+    notesSection.appendChild(saveBtn);
   });
 });
