@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const cors = require("cors"); 
 const noteRoutes = require("./routes/note.route.js");
 const mongoose = require('mongoose');
- const userRoutes = require('./routes/user.route.js');
+ const userRoutes = require('./routes/user.routes.js');
 const app = express()
 const verifyToken = require('./middleware/authMiddleware.js');
 require('dotenv').config();
@@ -40,8 +40,6 @@ app.get('/', (req, res) => {  // create a get route
 
 
 
-
-
 // connect to mongodb database using mongoose
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
@@ -52,7 +50,6 @@ mongoose.connect(process.env.MONGODB_URI)
   }
 )
 
-s
   .catch(err => {
     console.error(' Connection failed', err);
   });

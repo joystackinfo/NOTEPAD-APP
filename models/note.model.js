@@ -8,7 +8,7 @@ const NoteSchema = new mongoose.Schema({ // create note schema
     },  // links each note to a user
 
     content: {
-        type: string,
+        type:String,
         required: true
     }, //stores the note text
 
@@ -39,4 +39,4 @@ const NoteSchema = new mongoose.Schema({ // create note schema
 const note = mongoose.model('Note', NoteSchema);
 
 
-module.exports = Note;
+module.exports = note;
