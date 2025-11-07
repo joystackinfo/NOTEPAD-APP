@@ -15,21 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
        
     //CREATE SAVE BUTTON
       let saveBtn = document.createElement("button");
-      saveBtn.className = "save-btn";
+      saveBtn.className = "save-btn"; // Save button
       saveBtn.textContent= "Save Note";
 
       saveBtn.addEventListener("click", async () => {
-        const noteContent = editableText.textContent.trim();
+        const noteContent = editableText.textContent.trim(); // Get the note content
         if (!noteContent) {
-          alert("Please, write something first!");
+          alert("Please, write something first!"); // log message
           return;
         }
         console.log("Saving note:", noteContent);
-        alert("Note saved successfully!");
+        alert("Note saved successfully!"); // Alert user
 
 
 
-
+      });
 
 
     // Create trash icon
@@ -46,4 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     notesSection.appendChild(noteWrapper);
     notesSection.appendChild(saveBtn);
   });
+
+
 });
