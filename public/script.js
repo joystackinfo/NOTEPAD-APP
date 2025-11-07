@@ -21,13 +21,33 @@ document.addEventListener("DOMContentLoaded", () => {
       saveBtn.addEventListener("click", async () => {
         const noteContent = editableText.textContent.trim(); // Get the note content
         if (!noteContent) {
-          alert("Please, write something first!"); // log message
+          alert("Note cannot be empty!"); // log message
           return;
         }
-        console.log("Saving note:", noteContent);
-        alert("Note saved successfully!"); // Alert user
+            try {
+              const token = localStorage.getItem('token'); // get usertoken from local storage
+              const res = await fetch("http://localhost:3000/api/notes", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Authorization": `Bearer ${token}` // include token in authorization header
+                },
+                body: JSON.stringify({ Content:noteContent }) // send note content in request body
+              });
 
-
+              const data = await res.json();
+              if (res.ok) { // check if response is ok
+                alert("Note saved successfully!"); // Alert user to confirm
+              } else {
+                alert(data.msg || "Error saving note"); // Alert user of error
+              }
+              
+            } catch (error) {
+              
+        console.log(error);
+        alert("Failed to save note"); 
+            }
+              
 
       });
 
