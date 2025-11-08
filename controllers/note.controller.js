@@ -64,23 +64,20 @@ const getUserNotes = async (req, res) => {
    };
 
 
-//DELETE NOTE CONTROLLER
-
-const deleteNote = async (req, res) => {
+// DELETE a note by ID
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
-    const { id } = req.params; //get note id from url
+    const note = await Note.findOneAndDelete({ _id: req.params.id, user: req.user.id });
 
-    const deletedNote = await Note.findByIdAndDelete(id); //find note by id and delete
-
-    if (!deletedNote) {
-      return res.status(404).json({ message: "Note not found" }); //if note not found send 404
-    }
-
-    res.status(200).json({ message: "Note deleted successfully" }); //send success message if deleted
-  } catch (error) {
-    res.status(500).json({ message: "Error deleting note", error: error.message });//send error message if error occurs
+    if (!note) return res.status(404).json({ msg: "Note not found" });
+    res.json({ msg: "Note deleted" });
+    
+  } catch (err) {
+    res.status(500).json({ msg: "Server error" });
   }
-};
+});
+
+
 
 
 

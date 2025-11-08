@@ -81,3 +81,18 @@ button i {
 .note-text:focus {
   outline: none;
 }
+.save-btn {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed); /* vibrant purple gradient */
+  position:absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size:22px;
+  color:white;
+  user-select: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.save-btn:hover {
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+  box-shadow: 0 0 8px #a78bfa;
+}
