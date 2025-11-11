@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error(error);
-      alert("An error occurred during login");
+      alert("An error occurred during login"); //log an error message
     }
   });
 });
