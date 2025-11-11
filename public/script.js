@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     saveBtn.addEventListener("click", async () => {
       const content = editableText.textContent.trim();
       if (!content) {
-        alert("Note cannot be empty!");
+        alert("Note cannot be empty!"); //Add the save button
         return;
       }
 
