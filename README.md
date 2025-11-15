@@ -8,7 +8,7 @@ The app is a multi-user Notepad application.
   # FEATURES
  Users can easily interact with and access the app
 
-    User registration (username + password)
+User registration (username + password)
 
 Includes basic error messages
 
@@ -43,7 +43,7 @@ The user fills out the registration form, which sends the data to the backend to
 
  ##  User Authentication
 
-### POST /api/users/login
+## POST /api/users/login
 Logs in a user and returns a JWT token.
 
 **Request Body**:
@@ -130,5 +130,29 @@ Responde:
 }
 
 
+INSTALLATION & SETUP
 
+1. Clone the repository
+** git clone <your-repo-url> **
 
+ 2. Navigate into the project folder
+  ** cd project-folder **
+
+3.Install dependencies
+** npm install **
+
+4. Create a .env file in the root directory with your environment variables, 
+ ** PORT=5000
+** MONGO_URI=<your-mongo-db-connection-string>
+** JWT_SECRET=<your-secret-key>
+
+5. Start the server
+ ** npm start **
+
+ 6. Open the app in your browser
+Frontend files are in the public folder: index.html, login.html, register.html
+  
+
+  ## CONCLUSION
+  
+  A simple and secure Notepad application that shows how authentication, data protection, and CRUD operations work together.
